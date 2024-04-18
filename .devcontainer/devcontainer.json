@@ -1,0 +1,13 @@
+{
+    "name": "LaTeX Dev Container",
+    "dockerFile": "Dockerfile",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+      "James-Yu.latex-workshop"
+    ],
+    "forwardPorts": [3000],
+    "postCreateCommand": "tlmgr update --self && tlmgr install scheme-full",
+  }
+  
