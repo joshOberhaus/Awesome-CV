@@ -149,7 +149,6 @@
 \definecolor{awesome-concrete}{HTML}{95A5A6}
 \definecolor{awesome-darknight}{HTML}{131A28}
 \colorlet{awesome}{awesome-red}
-
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
 \setbool{acvSectionColorHighlight}{true}
@@ -661,7 +660,26 @@
 }{%
   \end{center}
 }
+
+\newif\iflongform
+\IfSubStr{\jobname}{\detokenize{longform}}{\longformtrue}{\longformfalse}
+
 % Define an entry of cv information
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cventrytitle}[5]{%
+\vspace{-8.0mm}
+\setlength\tabcolsep{0pt}
+\setlength{\extrarowheight}{0pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \ifempty{#2#3}
+    {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+    \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+  \ifstrempty{#5}
+    {}
+    {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\}
+\end{tabular*}%
+}
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
   \vspace{-2.0mm}
@@ -740,7 +758,7 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}
+  \vspace{-5.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
