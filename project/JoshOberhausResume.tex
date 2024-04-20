@@ -53,9 +53,9 @@
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[rectangle,edge,right]{./examples/profile}
+
 \position{Software Engineer}
 \name{Josh}{Oberhaus}
-
 \email{me@joshoberhaus.com}
 \homepage{www.joshoberhaus.com}
 \github{joshOberhaus}
@@ -79,10 +79,12 @@
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
+\iflongform
 \makecvfooter
   {\today}
   {\getfirstname\ \getlastname~~~·~~~Résumé}
   {\thepage}
+\fi
 
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
