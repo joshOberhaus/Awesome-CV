@@ -1,22 +1,39 @@
 %-------------------------------------------------------------------------------
 %	SECTION TITLE
 %-------------------------------------------------------------------------------
-\cvsection{Education}
+\begin{samepage}
+  \iflongform
+    \cvsection{Education}
+    \nopagebreak
+  \else
+    \cvsection{Education \& Certificates}
+  \fi
 
 
-%-------------------------------------------------------------------------------
-%	CONTENT
-%-------------------------------------------------------------------------------
-\begin{cventries}
+  %-------------------------------------------------------------------------------
+  %	CONTENT
+  %-------------------------------------------------------------------------------
+  \begin{cventries}
 
-%---------------------------------------------------------
-  \cventry
+    %---------------------------------------------------------
+    \cventry
     {B.S. in Computer Engineering, Summa Cum Laude} % Degree
     {Kettering University} % Institution
     {Flint, MI} % Location
-    {2008-2012} % Date(s)
+    {2012} % Date(s)
     {
     }
+    \iflongform
+      % only display certificates here if not in longform
+    \else
+      \\\cventry
+      {Deep Learning Specialization} % Name
+      {Coursera} % Issuer
+      {} % Credential ID
+      {2023} % Date(s)
+      {}
+    \fi
 
-%---------------------------------------------------------
-\end{cventries}
+    %---------------------------------------------------------
+  \end{cventries}
+\end{samepage}
