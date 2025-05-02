@@ -14,9 +14,9 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Compile
-      run: make resume
+      run: make
 
     - uses: actions/upload-artifact@v4
       with:
         name: project
-        path: project/JoshOberhaus.pdf
+        path: project/JoshOberhausResume.pdf
