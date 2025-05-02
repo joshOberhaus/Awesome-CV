@@ -7,7 +7,7 @@ CV_DIR = project/cv
 RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
 CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
 
-project: $(foreach x, coverletter resume, $x)
+project: $(foreach x, resume resume_longform, $x)
 
 resume: $(PROJECT_DIR)/JoshOberhausResume.tex $(RESUME_SRCS)
 	$(CC) -output-directory=$(PROJECT_DIR) $<
